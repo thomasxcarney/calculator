@@ -18,7 +18,9 @@ function operate(firstNumber, operator, secondNumber){
     } else if (operator == '*'){
        return multiply(firstNumber, secondNumber);
     } else if (operator == '/'){
-       return divide(firstNumber, secondNumber);
+       if(secondNumber === 0){
+        return "Are you insane?"
+       } else return divide(firstNumber, secondNumber);
     } else return "Error";
 };
 
@@ -42,7 +44,14 @@ allNumbers.forEach(item => {
 
 operatorButtons.forEach(item => {
     item.addEventListener('click', event => {
-        operator = item.innerHTML;
+        if(!operator){
+            operator = item.innerHTML;
+        } else {
+            updateDisplay(operate(firstNumber, operator, secondNumber));
+            firstNumber = display.innerHTML;
+            secondNumber = '';
+            operator = item.innerHTML;
+        };
     });
 });
 
@@ -51,11 +60,11 @@ equalsButton.addEventListener('click', event => {
 });
 
 clearButton.addEventListener('click', event => {
-        firstNumber = '';
-        secondNumber = '';
-        operator = '';
-        updateDisplay('696969');
-    });
+    firstNumber = '';
+    secondNumber = '';
+    operator = '';
+    updateDisplay('696969');
+ });
 
 function updateDisplay(value){
     display.innerHTML = value;
