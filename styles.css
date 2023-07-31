@@ -1,17 +1,17 @@
 .container {
     margins: auto;
-    width: 500px;
-    text-align: center;
+    width: 100%;
 }
 
 .calculator-container{
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    margin: 100px;
+    margin: auto;
+    width: 300px;
     flex-direction: column;
     background-color: darkgray;
+    border: 5px red solid;
+    border-radius: 10%;
 }
 
 .display{
@@ -22,4 +22,27 @@
 button{
     padding: 10px;
     margin: 5px;
+}
+
+.button-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+.clear{
+    grid-column-start: 1;
+    /*grid-column-end: span 4;*/
+    grid-row-start: 1;
+}
+.empty{
+    grid-column-start: 2;
+    grid-column-end: span 3;
+    grid-row-start: 1;
+}
+
+.empty2{
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 5;
 }
