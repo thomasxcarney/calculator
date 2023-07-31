@@ -73,3 +73,7 @@ img{
 h1{
     margin-top: 0;
 }
+
+.clear, .delete{
+    background-color: lightgreen;
+}
