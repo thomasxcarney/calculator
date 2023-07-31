@@ -30,6 +30,7 @@ const operatorButtons = document.querySelectorAll('.operator');
 const equalsButton = document.querySelector('.equals');
 const clearButton = document.querySelector('.clear');
 const decimalButton = document.querySelector('.point');
+const deleteButton = document.querySelector('.delete');
 
 allNumbers.forEach(item => {
     item.addEventListener('click', event => {
@@ -71,6 +72,16 @@ clearButton.addEventListener('click', event => {
     secondNumber = '';
     operator = '';
     updateDisplay('0');
+ });
+
+deleteButton.addEventListener('click', event => {
+    if(!operator){
+        firstNumber = firstNumber.substring(0, firstNumber.length-1);
+        updateDisplay(firstNumber);
+    } if(secondNumber){
+        secondNumber = secondNumber.substring(0, secondNumber.length-1);
+        updateDisplay(secondNumber);
+    }
  });
 
 decimalButton.addEventListener('click', event => {

@@ -14,7 +14,7 @@
     width: 300px;
     flex-direction: column;
     background-color: lightgray;
-    border: 5px red solid;
+    border: 5px green solid;
     border-radius: 5%;
     padding: 5px;
     filter: drop-shadow(2px 2px .15rem darkgray)
@@ -39,18 +39,25 @@ button{
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
 }
+
 .clear{
     grid-column-start: 1;
     grid-row-start: 1;
 }
-.empty{
+
+.delete{
     grid-column-start: 2;
-    grid-column-end: span 3;
+    grid-row-start: 1;
+}
+
+.empty{
+    grid-column-start: 3;
+    grid-column-end: span 2;
     grid-row-start: 1;
 }
 
 .operator, .equals{
-    background-color: rgba(246, 172, 172, 0.517);
+    background-color: rgb(252, 158, 100);
 }
 
 img{
