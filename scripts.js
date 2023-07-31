@@ -21,3 +21,20 @@ function operate(firstNumber, operator, secondNumber){
        return divide(firstNumber, secondNumber);
     } else return "Error";
 };
+
+const allNumbers = document.querySelectorAll('.number');
+const display = document.querySelector('.display');
+
+allNumbers.forEach(item => {
+    item.addEventListener('click', event => {
+    if(!firstNumber){
+        firstNumber = item.innerHTML;
+    } else if (!secondNumber){
+    secondNumber = item.innerHTML;
+    };
+    });
+});
+
+function populateDisplay {
+    
+}
