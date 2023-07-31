@@ -38,5 +38,5 @@ allNumbers.forEach(item => {
 });
 
 function updateDisplay(value){
-    display.value = value;
+    display.innerHTML = value;
 }
