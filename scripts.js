@@ -70,7 +70,7 @@ clearButton.addEventListener('click', event => {
     firstNumber = '';
     secondNumber = '';
     operator = '';
-    updateDisplay('696969');
+    updateDisplay('0');
  });
 
 decimalButton.addEventListener('click', event => {
