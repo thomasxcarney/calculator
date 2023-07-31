@@ -24,18 +24,38 @@ function operate(firstNumber, operator, secondNumber){
 
 const allNumbers = document.querySelectorAll('.number');
 const display = document.querySelector('.display');
+const operatorButtons = document.querySelectorAll('.operator');
+const equalsButton = document.querySelector('.equals');
+const clearButton = document.querySelector('.clear');
 
 allNumbers.forEach(item => {
     item.addEventListener('click', event => {
     if(!firstNumber){
-        firstNumber = item.innerHTML;
+        firstNumber = Number(item.innerHTML);
         updateDisplay(firstNumber);
     } else if (!secondNumber){
-        secondNumber = item.innerHTML;
+        secondNumber = Number(item.innerHTML);
         updateDisplay(secondNumber);
     };
     });
 });
+
+operatorButtons.forEach(item => {
+    item.addEventListener('click', event => {
+        operator = item.innerHTML;
+    });
+});
+
+equalsButton.addEventListener('click', event => {
+    updateDisplay(operate(firstNumber, operator, secondNumber));
+});
+
+clearButton.addEventListener('click', event => {
+        firstNumber = '';
+        secondNumber = '';
+        operator = '';
+        updateDisplay('696969');
+    });
 
 function updateDisplay(value){
     display.innerHTML = value;
