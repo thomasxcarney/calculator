@@ -9,19 +9,23 @@
     margin: auto;
     width: 300px;
     flex-direction: column;
-    background-color: darkgray;
+    background-color: lightgray;
     border: 5px red solid;
-    border-radius: 10%;
+    border-radius: 5%;
+    padding: 5px;
 }
 
 .display{
     background-color: white;
     width: 80%;
+    padding: 10px;
+    filter: drop-shadow(0 2px .15rem darkgray)
 }
 
 button{
     padding: 10px;
     margin: 5px;
+    filter: drop-shadow(0 2px .15rem darkgray)
 }
 
 .button-container{
@@ -41,8 +45,6 @@ button{
     grid-row-start: 1;
 }
 
-.empty2{
-    grid-column-start: 2;
-    grid-column-end: span 1;
-    grid-row-start: 5;
+.operator{
+    background-color: rgba(246, 172, 172, 0.517);
 }
