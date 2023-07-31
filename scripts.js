@@ -29,12 +29,14 @@ allNumbers.forEach(item => {
     item.addEventListener('click', event => {
     if(!firstNumber){
         firstNumber = item.innerHTML;
+        updateDisplay(firstNumber);
     } else if (!secondNumber){
-    secondNumber = item.innerHTML;
+        secondNumber = item.innerHTML;
+        updateDisplay(secondNumber);
     };
     });
 });
 
-function populateDisplay {
-    
+function updateDisplay(value){
+    display.value = value;
 }
