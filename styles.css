@@ -36,7 +36,6 @@ button{
 }
 .clear{
     grid-column-start: 1;
-    /*grid-column-end: span 4;*/
     grid-row-start: 1;
 }
 .empty{
@@ -45,6 +44,6 @@ button{
     grid-row-start: 1;
 }
 
-.operator{
+.operator, .equals{
     background-color: rgba(246, 172, 172, 0.517);
 }

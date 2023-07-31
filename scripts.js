@@ -29,6 +29,7 @@ const display = document.querySelector('.display');
 const operatorButtons = document.querySelectorAll('.operator');
 const equalsButton = document.querySelector('.equals');
 const clearButton = document.querySelector('.clear');
+const decimalButton = document.querySelector('.point');
 
 allNumbers.forEach(item => {
     item.addEventListener('click', event => {
@@ -70,6 +71,16 @@ clearButton.addEventListener('click', event => {
     secondNumber = '';
     operator = '';
     updateDisplay('696969');
+ });
+
+decimalButton.addEventListener('click', event => {
+    if(firstNumber && !operator && firstNumber.indexOf('.') < 0){
+        firstNumber += '.';
+        updateDisplay(firstNumber);
+    } else if(secondNumber && secondNumber.indexOf('.') < 0){
+        secondNumber += '.';
+        updateDisplay(secondNumber);
+    }
  });
 
 function updateDisplay(value){
