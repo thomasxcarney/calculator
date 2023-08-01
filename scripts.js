@@ -84,7 +84,7 @@ deleteButton.addEventListener('click', event => {
     }
  });
 
-decimalButton.addEventListener('click', event => {
+function addDecimal() {
     if(firstNumber && !operator && firstNumber.indexOf('.') < 0){
         firstNumber += '.';
         updateDisplay(firstNumber);
@@ -92,8 +92,28 @@ decimalButton.addEventListener('click', event => {
         secondNumber += '.';
         updateDisplay(secondNumber);
     }
- });
+}
+
+decimalButton.addEventListener('click', event => addDecimal());
 
 function updateDisplay(value){
     display.innerHTML = value;
 }
+
+document.addEventListener('keydown', (e) => {
+    if(Number(e.key)){
+        if(!operator && !firstNumber){
+            firstNumber = e.key;
+            updateDisplay(firstNumber);
+        } else if(firstNumber && !operator){
+            firstNumber += e.key;
+            updateDisplay(firstNumber);
+        } else if (operator && !secondNumber){
+            secondNumber = e.key;
+            updateDisplay(secondNumber);
+        } else if(operator && secondNumber){
+            secondNumber += e.key;
+            updateDisplay(secondNumber);
+        }
+    }
+});
