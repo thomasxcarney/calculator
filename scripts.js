@@ -12,9 +12,9 @@ let operator;
 
 function operate(firstNumber, operator, secondNumber){
     if(operator == '+'){
-        return add(Number(firstNumber), Number(secondNumber));
+        return (Math.round(add(Number(firstNumber), Number(secondNumber))* 100) / 100);
     } else if (operator == '-'){
-       return subtract(Number(firstNumber), Number(secondNumber));
+       return (Math.round(subtract(Number(firstNumber), Number(secondNumber))* 100) / 100);
     } else if (operator == '*'){
        return (Math.round(multiply(Number(firstNumber), Number(secondNumber))* 100) / 100);
     } else if (operator == '/'){
@@ -63,9 +63,11 @@ operatorButtons.forEach(item => {
     });
 });
 
-equalsButton.addEventListener('click', event => {
+function equalsButtonOperation(){
     updateDisplay(operate(firstNumber, operator, secondNumber));
-});
+}
+
+equalsButton.addEventListener('click', event => equalsButtonOperation);
 
 clearButton.addEventListener('click', event => {
     firstNumber = '';
@@ -114,6 +116,14 @@ document.addEventListener('keydown', (e) => {
         } else if(operator && secondNumber){
             secondNumber += e.key;
             updateDisplay(secondNumber);
-        }
+        };
+    } else if(e.key == "."){
+        addDecimal();
+    } else if(firstNumber && !operator){
+        if(e.key == '+' || e.key == '-' || e.key == '*' || e.key == '/'){
+            operator = e.key;
+        };
+    } else if(firstNumber && operator && secondNumber && e.key == '='){
+        equalsButtonOperation();
     }
 });
