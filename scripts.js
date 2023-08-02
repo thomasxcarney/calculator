@@ -50,6 +50,12 @@ allNumbers.forEach(item => {
     });
 });
 
+equalsButton.addEventListener('click', event => {
+    if(firstNumber && operator && secondNumber){
+        equalsButtonOperation();
+    };
+});
+
 operatorButtons.forEach(item => {
     item.addEventListener('click', event => {
         if(!operator){
